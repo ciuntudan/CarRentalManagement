@@ -16,7 +16,7 @@ public abstract class Vehicle {
         this.isAvailable = false;
     }
 
-    public Vehicle(String model, String brand, double pricePerDay, Engine engine, boolean isAvailable) {
+    public Vehicle(String brand, String model, double pricePerDay, Engine engine, boolean isAvailable) {
         this.id = ++intNrIds;
         this.model = model;
         this.brand = brand;

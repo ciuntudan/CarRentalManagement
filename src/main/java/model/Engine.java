@@ -11,8 +11,8 @@ public class Engine {
     }
 
     public Engine(FuelType fuelType, double cc, double hp) throws IllegalArgumentException {
-        if(cc>0){throw new IllegalArgumentException();}
-        if(hp>0){throw new IllegalArgumentException();}
+        if(cc<0){throw new IllegalArgumentException();}
+        if(hp<0){throw new IllegalArgumentException();}
         this.fuelType = fuelType;
         this.cc = cc;
         this.hp = hp;
