@@ -1,8 +1,9 @@
 package main.java.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Contract implements IContract{
+public class Contract implements IContract, Serializable {
     private int contractId;
     private Client client;
     private Vehicle vehicle;

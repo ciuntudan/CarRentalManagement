@@ -1,8 +1,9 @@
 package main.java.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Client {
+public class Client implements Serializable {
     private int id;
     private String name;
     private String email;

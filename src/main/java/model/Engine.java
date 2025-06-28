@@ -1,8 +1,9 @@
 package main.java.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Engine {
+public class Engine implements Serializable {
     private FuelType fuelType;
     private double cc;
     private double hp;
