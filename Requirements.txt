@@ -1,0 +1,89 @@
+✅ ENUNȚ
+Tema: Car Rental Management System
+
+Să se dezvolte o aplicație Java (stand-alone) care gestionează un sistem de închirieri auto, cu următoarele funcționalități obligatorii:
+
+1️⃣ Gestiunea clienților
+adăugare, ștergere, modificare clienți
+
+salvare în baza de date SQLite folosind JDBC
+
+interfață ClientRepository + implementare ClientRepositoryImpl
+
+2️⃣ Gestiunea vehiculelor
+evidența vehiculelor disponibile
+
+vehicule de mai multe tipuri (Sedan, SUV, Truck) folosind moștenire (is-a)
+
+compoziție (vehiculul are un motor - clasa Engine)
+
+stocarea vehiculelor într-o colecție Java (ArrayList)
+
+conversia colecției vehicule în JSON cu Gson sau Jackson
+
+3️⃣ Contracte de închiriere
+creare contracte
+
+serializare/deserializare contracte în fișiere binare
+
+interfață Contract + clasă abstractă BaseContract
+
+metode get/set, constructori default + cu parametri
+
+4️⃣ Sortare și filtrare
+vehiculele trebuie sortate după preț/zi
+
+implementarea Comparable
+
+suprascriere equals, hashCode, clone
+
+5️⃣ Multi-threading
+folosind ExecutorService pentru a simula rezervări multiple simultane
+
+sincronizare pe lista de rezervări
+
+6️⃣ Networking TCP
+✅ Varianta fără multi-threading
+
+un client Java trimite un obiect serializat Contract către un server Java,
+
+serverul primește, confirmă și închide conexiunea
+
+✅ Varianta cu multi-threading
+
+serverul TCP trebuie să accepte mai mulți clienți simultan folosind thread-uri dedicate sau ExecutorService
+
+fiecare client trimite contractul, serverul confirmă
+
+7️⃣ Networking UDP
+un server UDP care ascultă mesaje scurte (ex. reduceri, alerte)
+
+un client UDP care trimite mesaje scurte de tip text
+
+nu trebuie multi-threading aici, implementare simplă
+
+8️⃣ Java I/O Streams
+generarea rapoartelor textuale/binar cu toate contractele încheiate
+
+9️⃣ Funcționalități funcționale
+folosirea lambda & Stream API pentru filtrarea vehiculelor (ex. tip motor + preț)
+
+🔟 Reactive Streams
+un Publisher care publică evenimente la adăugarea unui vehicul nou
+
+un Subscriber care afișează aceste vehicule în consolă
+
+11️⃣ Gestionarea excepțiilor
+try-catch
+
+throws
+
+tratarea excepțiilor SQL, IO, rețea etc.
+
+✅ Client = id, name, email
+✅ Vehicle = id, brand, model, pricePerDay, engine
+✅ Engine = type, horsepower
+✅ Contract = contractId, client, vehicle, startDate, endDate
+✅ RentalContract = + totalPrice
+✅ Truck = + maxLoad
+✅ Sedan/SUV = doar extind Vehicle, nimic în plus
