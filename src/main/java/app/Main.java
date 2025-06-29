@@ -1,6 +1,10 @@
 package main.java.app;
 
 import main.java.model.*;
+import main.java.repository.ClientDbManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -45,6 +49,17 @@ public class Main {
         for (Vehicle v : rentalPark.getVehicles()) {
             System.out.println(v);
         }
-
+        ClientDbManager.createDb();
+        Client c1 =new Client("Razvan", "r@ase.ro");
+        Client c2 = new Client("Ioana", "i@ase.ro");
+        Client c3 =new Client("Daniel", "d@ase.ro");
+        Client c4 = new Client("Megatron", "m@ase.ro");
+        List<Client> clientList = new ArrayList<>();
+        clientList.add(c1);
+        clientList.add(c2);
+        clientList.add(c3);
+        clientList.add(c4);
+        ClientDbManager.insertIntoDb(clientList);
+        ClientDbManager.displlayDb();
     }
 }
