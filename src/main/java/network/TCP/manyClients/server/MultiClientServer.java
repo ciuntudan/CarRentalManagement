@@ -31,8 +31,7 @@ public class MultiClientServer {
                         System.out.println("Recieved contract: " + recievedContract);
                         PrintWriter pw = new PrintWriter(clientSocket.getOutputStream(), true);
                         pw.println("Contract recieved succesfully!");
-                        clientSocket.close();
-                        System.out.println("Server closed!");
+                        //clientSocket.close();
                     } catch (IOException | ClassNotFoundException e) {
                         e.printStackTrace();
                     }
